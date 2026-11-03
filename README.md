@@ -1,12 +1,46 @@
-# CLI Games
+# CLI Arcade
 
 Node.js 18+ kerak. Tashqi paketlar talab qilinmaydi.
+
+## O‘rnatish va ishga tushirish
+
+Paket npm registry’ga chiqarilgandan so‘ng:
+
+```sh
+npm install --global cliarcade
+cliarcade
+```
+
+Yordam: `cliarcade --help`; versiya: `cliarcade --version`. Matnli rejim: `cliarcade --plain`; ASCII ikonkalari: `cliarcade --ascii-icons`.
+
+Registry’ga chiqarishdan oldin shu loyiha papkasidan lokal o‘rnatish mumkin:
+
+```sh
+npm install --global .
+cliarcade
+```
+
+Loyihani ishlab chiqish rejimida ochish:
 
 ```sh
 npm start
 ```
 
 Menyuda oltita o‘yin: tic-tac-toe, chess, minesweeper, checkers, snake va ASCII maze runner. Interaktiv terminalda ishga tushiring (PowerShell, Windows Terminal, macOS yoki Linux terminali).
+
+## npm’ga chiqarish
+
+`package.json` ichidagi `bin` sozlamasi o‘rnatilganda `cliarcade` buyrug‘ini yaratadi. Paketga faqat `bin/`, `src/`, README va npm metadata fayllari kiradi; testlar, skrinshotlar va mahalliy sozlamalar kirmaydi. Nashr oldidan testlar avtomatik ishlaydi.
+
+Test fayllari `--test-concurrency=1` bilan ketma-ket ishlaydi. Bu RAM kam bo‘lgan Windows kompyuterlarida bir vaqtning o‘zida ko‘p Node.js test jarayonlari ochilib, `Zone Allocation failed` / `VirtualAlloc failed` xatolari chiqishining oldini olishga yordam beradi. `prepublishOnly` ham shu test buyrug‘ini ishlatadi.
+
+```sh
+npm pack --dry-run
+npm login
+npm publish
+```
+
+Paket nomi `cliarcade` npm’da band bo‘lsa, `name` ni `@USERNAME/cliarcade` ga almashtiring va `npm publish --access public` ishlating. Bunda o‘rnatish `npm install --global @USERNAME/cliarcade` bo‘ladi, ishga tushirish buyrug‘i esa `cliarcade` bo‘lib qoladi. Hozir litsenziya `UNLICENSED` — ochiq manba litsenziyasi berilmagan.
 
 ## Loyiha tuzilmasi
 
