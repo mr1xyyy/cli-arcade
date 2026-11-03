@@ -1,0 +1,8 @@
+{
+  "name": "cli-games",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Six terminal games with local and TCP multiplayer",
+  "scripts": { "start": "node bin/cli.js", "start:plain": "node bin/cli.js --plain", "test": "node --test" },
+  "engines": { "node": ">=18" }
+}
